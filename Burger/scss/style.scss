@@ -1,0 +1,222 @@
+@use "global";
+@use "base";
+
+//=========== Header ==============
+.header {
+    position: fixed;
+    width: 100%;
+    display: block;
+    z-index: 999;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 40px;
+        background-color: var(--body-color);
+    }
+    .navigation {
+        display: flex;
+        max-width: 100%;
+
+        &__menu {
+            font-family: var(--font-heading);
+            ul {
+                display: flex;
+            }
+        }
+
+        &__open {
+            display: none;
+        }
+    }
+
+    &__logo-link {
+        svg {
+            width: clamp(1.25rem, 0.714rem + 2.381vw, 2.5rem);
+            background-color: var(--primary-color);
+            padding: 5px;
+            box-sizing: unset;
+            border-radius: 8px;
+        }
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: var(--font-heading);
+        line-height: 0;
+    }
+}
+.scroll-header {
+    box-shadow: 0 0 20px -2px #ad9c268a;
+}
+//============= Hero section ============
+.hero {
+    .container {
+        min-height: 100vh;
+        padding-block: 5rem;
+        justify-items: center;
+        align-content: center;
+        row-gap: 3rem;
+    }
+
+    &__data {
+        flex-flow: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+
+        &-title {
+            font-size: var(--font-xl);
+            line-height: 1.1em;
+        }
+    }
+    &__image {
+        position: relative;
+        display: grid;
+        justify-items: center;
+        &-one {
+            width: 320px;
+            z-index: 2;
+        }
+
+        &-two {
+            position: relative;
+            max-width: 360px;
+            top: -50px;
+            z-index: 1;
+        }
+
+        &-ingredient {
+            position: absolute;
+            max-width: 60px;
+            z-index: 2;
+        }
+
+        .potato-1 {
+            left: 0;
+        }
+        .potato-2 {
+            right: 0;
+            bottom: 10%;
+            transform: scaleX(-1);
+        }
+
+        .lettuce-1 {
+            right: 0;
+            rotate: 8deg;
+            transform: scaleX(-1);
+        }
+        .lettuce-2 {
+            left: -20px;
+            bottom: 7rem;
+            rotate: 8deg;
+        }
+        .tomato-1 {
+            left: 30%;
+            bottom: 4rem;
+        }
+    }
+}
+
+//============= Recipe section ============
+.recipe {
+    .container {
+        gap: 20px;
+    }
+    &__title {
+        text-align: center;
+    }
+
+    &__image img {
+        max-width: 320px;
+        margin: auto;
+    }
+    &__data {
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+        &:nth-child(odd) .data-wrapper {
+            order: 1;
+        }
+    }
+
+    // &__card:nth-child(odd) {
+    //     .img-wrapper {
+    //         order: 1;
+    //         border: 1px solid red;
+    //     }
+    // }
+    &__card {
+        display: flex;
+        gap: 10px;
+        &:nth-child(odd) .img-wrapper {
+            order: 1;
+        }
+        .data-wrapper {
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            h3 {
+                text-align: left;
+            }
+        }
+
+        .img-wrapper {
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            padding: 10px;
+        }
+    }
+}
+//============ Small devices ===========
+@media screen and (max-width: 1150px) {
+    .navigation__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding-block: 40px;
+        box-shadow: 0 0 20px 2px rgba(219, 219, 219, 0.674);
+        transition: 0.5s;
+        ul {
+            flex-direction: column;
+            gap: 25px;
+            li {
+                text-align: center;
+            }
+        }
+        &-close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 20px;
+            z-index: 999;
+            cursor: pointer;
+            padding: 5px;
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    #navigation .navigation__open {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+//============= Large devices =============
+@media screen and (min-width: 1151px) {
+    .recipe__card:nth-child(even) .data-wrapper {
+        order: -1;
+    }
+}

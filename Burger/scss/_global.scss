@@ -1,0 +1,55 @@
+@font-face {
+    font-display: swap;
+    font-family: "Aclonica";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/font/aclonica-v22-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/font/montserrat-v26-latin-regular.woff2");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/assets/font/montserrat-v26-latin-500.woff2");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/assets/font/montserrat-v26-latin-600.woff2");
+}
+
+:root {
+    --primary-color: hsl(45, 99%, 55%);
+    --primiary-color-alt: hsl(45, 99%, 48%);
+    --secondary-color: hsl(22, 100%, 8%);
+    --white-color: hsl(34, 100%, 96%);
+    --title-color: hsl(22, 100%, 8%);
+    --text-color: hsl(22, 24%, 32%);
+    --text-color-light: hsl(23, 16%, 40%);
+    --body-color: hsl(34, 100%, 92%);
+    --body-color-alt: hsl(34, 100%, 88%);
+    --container-color: hsl(34, 100%, 96%);
+    --shadow-small-img: drop-shadow(0 4px 16px hsla(22, 100%, 8%, 0.2));
+    --shadow-big-img: drop-shadow(0 8px 24px hsla(22, 100%, 8%, 0.2));
+
+    --font-heading: "Aclonica", sans-serif;
+    --font-body: "Montserrat", sans-serif;
+    --font-xl: clamp(3rem, 2.357rem + 2.857vw, 4.5rem);
+    --font-h1: clamp(1.5rem, 1.179rem + 1.429vw, 2.25rem);
+    --font-h2: clamp(1.25rem, 1.143rem + 0.476vw, 1.5rem);
+    --font-h3: clamp(1rem, 0.893rem + 0.476vw, 1.25rem);
+    --font-normal: 0.938rem;
+    --font-small: 0.813rem;
+
+    --margin-block: clamp(1.25rem, 0.446rem + 3.571vw, 3.125rem);
+}
